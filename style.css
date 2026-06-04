@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: #f6f8fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Card Principal */
+.pokemon-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.04);
+    padding: 24px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* Efeito de transição suave para a troca */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Classe ativada pelo JS quando o card terminar de carregar */
+.pokemon-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.image-container {
+    width: 140px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Informações do Card */
+.card-info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    row-gap: 4px;
+}
+
+.pokemon-name {
+    font-size: 24px;
+    font-weight: 500;
+    color: #1d1d1f;
+    text-transform: lowercase;
+}
+
+.pokemon-number {
+    grid-column: 1;
+    font-size: 14px;
+    color: #ccc;
+    font-weight: 500;
+}
+
+.types-container {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    height: 100%;
+}
+
+.type-badge {
+    background-color: #e3e3e3;
+    color: #333333;
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
